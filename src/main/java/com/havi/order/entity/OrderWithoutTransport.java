@@ -1,7 +1,13 @@
 package com.havi.order.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
@@ -10,8 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table(name = "product_order")
-public class ProductOrder {
+public class OrderWithoutTransport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productOrderId;
@@ -25,8 +30,4 @@ public class ProductOrder {
     private Double orderPayment;
     private String contactNo;
     private String farmerGivenStatus;
-    private LocalDateTime transporterReceiveTime;
-    private LocalDateTime transporterGivenTime;
-    private String transporterStatus;
-    private LocalDateTime offerEndTime;
 }
