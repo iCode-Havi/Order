@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,4 +31,6 @@ public class OrderWithoutTransport {
     private Double orderPayment;
     private String contactNo;
     private String farmerGivenStatus;
+
+
 }
