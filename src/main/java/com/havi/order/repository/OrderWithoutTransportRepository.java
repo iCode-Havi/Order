@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderWithoutTransportRepository extends JpaRepository<OrderWithoutTransport , Long> {
-
+    Optional<OrderWithoutTransport> findByOrderCode(String code);
 }
