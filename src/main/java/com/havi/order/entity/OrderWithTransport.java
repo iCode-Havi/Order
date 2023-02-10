@@ -4,7 +4,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-
+@Entity
 @Getter
 @Setter
 public class OrderWithTransport extends OrderWithoutTransport{
