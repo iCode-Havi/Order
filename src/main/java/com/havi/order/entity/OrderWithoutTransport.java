@@ -31,6 +31,7 @@ public class OrderWithoutTransport {
     private Double orderPayment;
     private String contactNo;
     private String farmerGivenStatus;
+    private Long customerId;
 
 
 }
