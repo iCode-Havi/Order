@@ -1,5 +1,6 @@
 package com.havi.order.service;
 import com.havi.order.entity.OrderWithoutTransport;
+import com.havi.order.respose.*;
 import com.havi.order.entity.PreviousCustomer;
 import com.havi.order.repository.OrderWithoutTransportRepository;
 import com.havi.order.repository.PreviousCustomerRepository;
@@ -32,8 +33,16 @@ public class CommonMethodServiceImpl implements CommonMethodService{
 
 
     @Override
-    public List<OrderWithoutTransport> getOrderByCode(String orderCode) {
-        return null;
+    public getOrderRes getOrderByCode(String orderCode) {
+        Optional<OrderWithoutTransport> order = orderWithoutTransportRepository.findByOrderCode(orderCode);
+        if(order.isPresent){
+            getOrderRes.order = order;
+            getOrderRes.massage = "success";
+            return getOrderRes.getObj();
+        }
+        getOrderRes.order = null;
+        getOrderRes.massage = "error code";
+        return getOrderRes.getObj();
     }
 
     @Override
