@@ -1,6 +1,6 @@
 package com.havi.order.service;
 import com.havi.order.entity.OrderWithoutTransport;
-import com.havi.order.respose.*;
+import com.havi.order.response.*;
 import com.havi.order.entity.PreviousCustomer;
 import com.havi.order.repository.OrderWithoutTransportRepository;
 import com.havi.order.repository.PreviousCustomerRepository;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommonMethodServiceImpl implements CommonMethodService{
@@ -35,8 +36,8 @@ public class CommonMethodServiceImpl implements CommonMethodService{
     @Override
     public getOrderRes getOrderByCode(String orderCode) {
         Optional<OrderWithoutTransport> order = orderWithoutTransportRepository.findByOrderCode(orderCode);
-        if(order.isPresent){
-            getOrderRes.order = order;
+        if(order.isPresent()){
+            getOrderRes.order = order.get();
             getOrderRes.massage = "success";
             return getOrderRes.getObj();
         }

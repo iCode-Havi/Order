@@ -1,5 +1,6 @@
 package com.havi.order.entity;
 
+import jakarta.persistence.Entity;
 import lombok.*;
 
 import java.time.LocalDateTime;

@@ -1,6 +1,7 @@
 package com.havi.order.controller;
 
 import com.havi.order.entity.OrderWithoutTransport;
+import com.havi.order.response.getOrderRes;
 import com.havi.order.service.CommonMethodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,7 @@ private List<OrderWithoutTransport> getOrderByUser(@PathVariable Long id){
 
 //get order by code
 @GetMapping("/getOrderByCode/{orderCode}")
-private List<OrderWithoutTransport> getOrderByCode(@PathVariable String orderCode){
+private getOrderRes getOrderByCode(@PathVariable String orderCode){
     return commonMethodService.getOrderByCode(orderCode);
 }
 

@@ -2,6 +2,7 @@ package com.havi.order.service;
 
 
 import com.havi.order.entity.*;
+import com.havi.order.response.getOrderRes;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface CommonMethodService {
 
     List<OrderWithoutTransport> getOrderByUser(Long id);
 
-    List<OrderWithoutTransport> getOrderByCode(String orderCode);
+    getOrderRes getOrderByCode(String orderCode);
 
     List<OrderWithoutTransport> getAvailableOffers();
 
